@@ -1,0 +1,484 @@
+Created the upload-ready HTML privacy policy for CATHY.
+
+Download cathy-privacy-policy.html
+
+It already covers CATHY’s receipt/bill scanning, OpenAI OCR processing, expense data, subscriptions, Firebase notifications, Apple/Google in-app purchases, device/session security, retention, deletion/privacy rights, and international use.
+
+One thing I intentionally did not invent is a support/privacy email address. The page currently says users can contact you through CATHY’s official support channel. If you give me your support email, I can replace that with a clickable mailto: link. 
+
+cathy-privacy-policy.html
+HTML
+Create me html also for support just like Plugit 
+Analysis paused
+
+Created the CATHY support page in the same style as the privacy page and similar to PlugIt.
+
+Download cathy-support.html
+
+It includes FAQs, restore purchases for iOS/Android, subscription help, issue reporting, a Privacy Policy link to privacy.html, and buttons that open the user’s email app.
+
+I left the recipient blank because no actual CATHY support email has been provided yet; the email subject/body are already pre-filled.
+
+cathy-support.html
+HTML
+when click report or  email should have my support email jbstreaming02@gmail.com
+
+Updated. Both Email CATHY Support and Report a Problem now open the user’s email app addressed to jbstreaming02@gmail.com.
+
+Download the updated cathy-support.html 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Support for CATHY, a personal finance app for scanning receipts, tracking expenses, bills, and subscriptions." />
+  <meta name="robots" content="index,follow" />
+  <title>Support | CATHY</title>
+
+  <style>
+    :root {
+      --bg: #f4fbf9;
+      --surface: rgba(255, 255, 255, 0.94);
+      --text: #17312f;
+      --muted: #617570;
+      --primary: #063e38;
+      --secondary: #009b8e;
+      --accent: #79ddc9;
+      --border: rgba(6, 62, 56, 0.12);
+      --shadow: 0 18px 50px rgba(6, 62, 56, 0.10);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(121, 221, 201, 0.22), transparent 30%),
+        linear-gradient(180deg, #f8fdfc 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--secondary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 56px 0 28px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border-radius: 32px;
+      padding: 44px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      right: -70px;
+      top: -80px;
+      background: rgba(121, 221, 201, 0.18);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .brand-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(121, 221, 201, 0.16);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      margin: 18px 0 0;
+      max-width: 720px;
+      font-size: 1.04rem;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    main {
+      padding: 10px 0 64px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 34px;
+      margin: 22px 0;
+      box-shadow: 0 10px 30px rgba(6, 62, 56, 0.06);
+      backdrop-filter: blur(10px);
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 16px;
+      color: var(--primary);
+      font-size: 1.45rem;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      margin: 26px 0 8px;
+      color: var(--primary);
+      font-size: 1.06rem;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      padding-left: 22px;
+      margin: 10px 0 14px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 20px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      box-shadow: 0 10px 24px rgba(0, 155, 142, 0.20);
+    }
+
+    .button-secondary {
+      color: var(--primary);
+      background: rgba(121, 221, 201, 0.18);
+      border: 1px solid rgba(0, 155, 142, 0.18);
+    }
+
+    .faq {
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      margin-top: 20px;
+    }
+
+    .faq:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+      margin-top: 0;
+    }
+
+    .notice {
+      background: rgba(121, 221, 201, 0.16);
+      border: 1px solid rgba(0, 155, 142, 0.16);
+      border-left: 4px solid var(--secondary);
+      padding: 18px 20px;
+      border-radius: 16px;
+      margin-top: 18px;
+    }
+
+    footer {
+      padding: 0 0 52px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-brand {
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    @media (max-width: 640px) {
+      header {
+        padding-top: 24px;
+      }
+
+      .hero {
+        padding: 30px 24px;
+        border-radius: 24px;
+      }
+
+      .card {
+        padding: 24px 20px;
+        border-radius: 20px;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <section class="hero">
+        <div class="brand">
+          <span class="brand-dot"></span>
+          CATHY
+        </div>
+
+        <h1>Support</h1>
+
+        <p class="subtitle">
+          Need help with CATHY? Find answers to common questions, restore your purchases,
+          report an issue, or contact support.
+        </p>
+      </section>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <section class="card">
+        <h2>Contact Support</h2>
+
+        <p>
+          If you are experiencing a problem with CATHY, you can contact us directly using your
+          email app.
+        </p>
+
+        <p>
+          When reporting an issue, please include your device model, operating system version,
+          CATHY app version, and a short description of what happened.
+        </p>
+
+        <div class="button-row">
+          <a
+            class="button button-primary"
+            href="mailto:jbstreaming02@gmail.com?subject=CATHY%20Support&body=Hi%20CATHY%20Support%2C%0A%0AI%20need%20help%20with%3A%0A%0ADevice%3A%0AOS%20Version%3A%0ACATHY%20Version%3A%0A%0ADescription%3A%0A"
+          >
+            Email CATHY Support
+          </a>
+
+          <a class="button button-secondary" href="privacy.html">
+            Privacy Policy
+          </a>
+        </div>
+
+        <div class="notice">
+          The support button opens your default email application and addresses the message to
+          jbstreaming02@gmail.com.
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq">
+          <h3>How do I scan a receipt or bill?</h3>
+          <p>
+            Open CATHY and choose the scan option. Capture or select a clear image of your receipt,
+            bill, invoice, parking receipt, or supported document. CATHY will process the document
+            and extract available transaction information.
+          </p>
+        </div>
+
+        <div class="faq">
+          <h3>Why is some receipt information incorrect?</h3>
+          <p>
+            Receipt extraction is automated and may occasionally misread damaged, blurry, faded,
+            unusual, or very long receipts. Review extracted information before saving it and
+            correct any fields when necessary.
+          </p>
+        </div>
+
+        <div class="faq">
+          <h3>Can I manually add expenses or subscriptions?</h3>
+          <p>
+            Yes. CATHY supports manually managed financial information in addition to information
+            extracted from supported documents.
+          </p>
+        </div>
+
+        <div class="faq">
+          <h3>Why did I get logged out on my other device?</h3>
+          <p>
+            CATHY may allow only one active device session per account for account security.
+            Signing in on a new device can end the previous active session.
+          </p>
+        </div>
+
+        <div class="faq">
+          <h3>Why am I not receiving notifications?</h3>
+          <p>
+            Make sure notifications are enabled for CATHY in your device settings. Notifications
+            may be used for receipt-processing updates, subscription reminders, bill reminders,
+            and important account activity.
+          </p>
+        </div>
+      </section>
+
+      <section class="card" id="restore-purchases">
+        <h2>Restore Purchases</h2>
+
+        <p>
+          If you previously purchased CATHY Pro and your subscription is not showing correctly,
+          first make sure you are signed in using the same Apple ID or Google account used for the
+          original purchase.
+        </p>
+
+        <h3>On iPhone or iPad</h3>
+        <ul>
+          <li>Open CATHY.</li>
+          <li>Go to the CATHY Pro or subscription screen.</li>
+          <li>Select <strong>Restore Purchases</strong> if the option is available.</li>
+          <li>Make sure the device is signed in to the Apple ID used for the purchase.</li>
+        </ul>
+
+        <h3>On Android</h3>
+        <ul>
+          <li>Open CATHY while signed in to the Google account used for the purchase.</li>
+          <li>Open the CATHY Pro or subscription screen.</li>
+          <li>Allow the app to refresh your subscription status.</li>
+        </ul>
+
+        <p>
+          If your subscription is active in Apple App Store or Google Play but CATHY still does not
+          recognize it, contact support and include the platform you purchased from.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Report an Issue</h2>
+
+        <p>Please include as much useful information as possible, such as:</p>
+
+        <ul>
+          <li>What you were trying to do</li>
+          <li>What you expected to happen</li>
+          <li>What actually happened</li>
+          <li>Your device model</li>
+          <li>Your iOS or Android version</li>
+          <li>Your CATHY app version</li>
+          <li>Whether the issue happens every time</li>
+          <li>A screenshot, when appropriate</li>
+        </ul>
+
+        <p>
+          For privacy, avoid sending full payment card numbers, passwords, authentication codes,
+          or other highly sensitive credentials.
+        </p>
+
+        <div class="button-row">
+          <a
+            class="button button-primary"
+            href="mailto:jbstreaming02@gmail.com?subject=CATHY%20Bug%20Report&body=Hi%20CATHY%20Support%2C%0A%0AI%20would%20like%20to%20report%20an%20issue.%0A%0AWhat%20I%20was%20doing%3A%0A%0AExpected%20result%3A%0A%0AActual%20result%3A%0A%0ADevice%3A%0AOS%20Version%3A%0ACATHY%20Version%3A%0A"
+          >
+            Report a Problem
+          </a>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Subscription Help</h2>
+
+        <p>
+          CATHY Pro subscriptions purchased through the app are managed by Apple App Store or
+          Google Play.
+        </p>
+
+        <p>
+          You can manage, cancel, or review your subscription from the subscription settings of the
+          platform account used to make the purchase.
+        </p>
+
+        <p>
+          Deleting the CATHY app does not automatically cancel an active App Store or Google Play
+          subscription.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Privacy</h2>
+
+        <p>
+          To learn how CATHY handles receipt images, financial records, account information,
+          device information, AI processing, and other data, please review our Privacy Policy.
+        </p>
+
+        <div class="button-row">
+          <a class="button button-secondary" href="privacy.html">
+            Read Privacy Policy
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span class="footer-brand">CATHY</span>
+      <br />
+      © 2026 JLabs Tech. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
+cathy-support.html
+HTML
